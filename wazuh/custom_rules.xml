@@ -1,0 +1,46 @@
+<!-- Local rules -->
+
+<group name="local,syslog,sshd,ids,dlp,">
+
+    <!-- ===================================================== -->
+    <!-- SURICATA SSH BRUTE FORCE                              -->
+    <!-- ===================================================== -->
+
+    <rule id="100400" level="10">
+      <if_sid>86601</if_sid>
+      <match>ET BRUTE SSH Brute Force</match>
+      <description>HIGH: Suricata detected SSH brute force attack</description>
+      <group>ids,suricata,ssh_bruteforce,attack,</group>
+    </rule>       
+
+    <!-- ===================================================== -->
+    <!-- DLP RULES                                             -->
+    <!-- ===================================================== -->
+
+    <!-- Credit Card Number Detection -->
+    <rule id="100200" level="12">
+        <if_sid>550,551,554</if_sid>
+        <match>4[0-9]{12}|5[1-5][0-9]{14}|3[47][0-9]{13}</match>
+        <description>DLP: Credit card number detected</description>
+        <group>dlp,pci_dss,</group>
+    </rule>
+
+
+    <!-- Sensitive Credential Detection -->
+    <rule id="100201" level="10">
+        <if_sid>550,551,554</if_sid>
+        <match>password=|passwd=|pwd=|secret=|api_key=|token=</match>
+        <description>DLP: Sensitive credential detected</description>
+        <group>dlp,gdpr,</group>
+    </rule>
+
+
+    <!-- SSN / PII Detection -->
+    <rule id="100205" level="12">
+        <if_sid>550,551,554</if_sid>
+        <match>[0-9]{3}-[0-9]{2}-[0-9]{4}</match>
+        <description>DLP: Possible SSN/PII detected</description>
+        <group>dlp,pii,</group>
+    </rule>
+
+</group>

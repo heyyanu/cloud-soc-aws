@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  thehive:
+    image: thehiveproject/thehive4:latest
+    container_name: thehive
+    restart: always
+    ports:
+      - "9000:9000"
+    environment:
+      - JVM_OPTS=-Xms512m -Xmx1g
+    volumes:
+      - thehive_data:/opt/thehive/data
+      - thehive_logs:/var/log/thehive
+
+volumes:
+  thehive_data:
+  thehive_logs:
