@@ -944,8 +944,8 @@ MIT License — free to use, modify, and distribute with attribution.
 
 Built by **Anudev** as a hands-on SOC engineering project.
 
-- LinkedIn: [linkedin.com/in/YOUR_PROFILE](https://linkedin.com/in/YOUR_PROFILE)
-- Medium: [Full technical walkthrough](https://medium.com/@YOUR_HANDLE)
+- LinkedIn: [linkedin.com/in/YOUR_PROFILE](https://www.linkedin.com/in/anudev-vp-b44423373)
+- Medium: [Full technical walkthrough](https://medium.com/@heyyanudev)
 
 ---
 
