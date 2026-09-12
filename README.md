@@ -911,7 +911,7 @@ cloud-soc-aws/
 │   └── soc_diagram.png                   # Full architecture diagram
 ├── wazuh/
 │   ├── ossec.conf                        # Wazuh Manager configuration
-│   └── local_rules.xml                   # Custom Wazuh detection rules
+│   └── custom_rules.xml                   # Custom Wazuh detection rules
 ├── suricata/
 │   ├── local.rules                       # Custom Suricata signatures
 │   └── suricata.yaml                     # Suricata configuration
